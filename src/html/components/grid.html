@@ -1,0 +1,19 @@
+<h2>Grid</h2>
+
+<div class="grid-row">
+	<div class="grid-item"><span></span></div>
+	<div class="grid-item"><span></span></div>
+	<div class="grid-item"><span></span></div>
+	<div class="grid-item"><span></span></div>
+</div>
+
+<p>Juniper includes a a very basic grid and a couple of helper mixins. It is a fluid grid, and each item is floated and uses padding for gutters. The size of the gutter is controlled using the <code>$gutter-width</code> variable</p>
+
+<h4>Utility Classes</h4>
+
+<p><code>.util-GridItem-$i</code> Where $i is the number of columns the grid item should  span.</p>
+<p><code>.util-GridItem-Row</code> Grid container class. Offsets margins and clears floats.</p>
+
+<h4>Mixins</h4>
+<p><code>grid-item( $columns, $total_columns );</code> which will create a floated grid item with a fluid width, and internal padding using the value of $gutter-width.defaults to total 12 columns).</p>
+<p><code>grid-row();</code> Offsets margins and clears floats.</p>

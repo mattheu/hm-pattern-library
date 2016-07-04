@@ -47,3 +47,27 @@
 	margin-top: -1.94375rem;
 	font-style: italic;
 }
+
+.grid-row {
+	@include grid-row;
+}
+
+.grid-item {
+
+	@include grid-item( 3, 12 );
+
+	@media #{ $mq-md-down } {
+		@include grid-item( 1, 2 );
+	}
+
+	@media #{ $mq-sm-down } {
+		@include grid-item( 1, 1 );
+	}
+
+	> span {
+		display: block;
+		background: rgba( 0, 0, 0, 0.1 );
+		min-height: 200px;
+	}
+
+}
