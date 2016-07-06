@@ -52,3 +52,136 @@
 	margin-top: -1.94375rem;
 	font-style: italic;
 }
+
+
+.InlineComment_Placeholder {
+
+	position: relative;
+	z-index: 0;
+	cursor: help;
+	background: lighten( $hm-accent, 20% );
+	border-radius: 2px;
+
+	&:before {
+		content: " ";
+		display: inline-block;
+		background: url( "#{ $hm-images }/icons/icon-pencil-black.svg" ) no-repeat center center;
+		background-size: 100%;
+		width: 0.75em;
+		height: 0.75em;
+		margin-right: 0.3em;
+		margin-left: 0.2em;
+		opacity: 0.5;
+		position: relative;
+		top: .0625em;
+	}
+
+	&.InlineComment_Placeholder-Resolvable {
+		background: lighten( $hm-primary, 35% );
+
+		&:before {
+			background-image: url( "#{ $hm-images }/icons/icon-bubbles-black.svg" );
+		}
+
+	}
+
+}
+
+.InlineComment_Popup {
+
+	background: $hm-light-grey;
+	padding: 0 $gutter-width;
+	border-radius: 2px;
+	max-width: 300px;
+	position: absolute;
+	opacity: 0;
+	transition: opacity ease-in-out 0.2s;
+	margin-top: $base-line-height * -.5;
+
+	p {
+		@include text-sm;
+	}
+
+	&:after {
+		content: " ";
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: #{$base-line-height * .75 } #{$base-line-height * .75 } #{$base-line-height * .75 } 0;
+		border-color: transparent $hm-accent transparent transparent ;
+		position: absolute;
+		top: 0px;
+		right: 100%;
+	}
+
+	&:before {
+		@include font-heading;
+		@include text-std;
+		content: "Note";
+		display: block;
+		margin: 0 #{ -1 * $gutter-width };
+		padding: #{ $base-line-height / 4 } $gutter-width;
+		background: $hm-accent;
+		border-radius: 2px 2px 0 0;
+		color: white;
+	}
+
+}
+
+.InlineComment_Popup-Visible {
+	opacity: 1;
+	transition: opacity ease-in-out 0.2s;
+}
+
+.InlineComment_PopupClose {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+}
+
+
+.InlineComment_Popup-Resolvable {
+
+	&:after {
+		border-color: transparent $hm-primary transparent transparent;
+	}
+
+	&:before {
+		background-color: $hm-primary;
+		content: "Comment";
+	}
+
+	.InlineComment_PopupClose {
+
+		background-color: $hm-primary;
+
+		&:hover ,
+		&:focus {
+			background: lighten( $hm-primary, 10% );
+		}
+	}
+}
+
+.InlineComment_Summary_Body {
+
+}
+
+.InlineComment_Summary_Heading {
+	@include text-sm;
+	font-style: italic;
+}
+
+.InlineComment_Summary_Quote {
+	@include text-std;
+}
+
+.Diff-Added {
+	background: #dbeecb;
+	text-decoration: none;
+}
+
+.Diff-Removed {
+	background: lighten( $hm-primary, 35% );;
+}
