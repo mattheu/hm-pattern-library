@@ -1,8 +1,10 @@
-## Juniper, the Human Made pattern library
+# Juniper 
 
-### Personnel
+The Human Made Web Style Guide and Pattern Library.
 
-#### Developers
+Take a look here: [https://humanmade.github.io/hm-pattern-library/](https://humanmade.github.io/hm-pattern-library/)
+
+#### Maintained by:
 
 * Matthew Haines-Young, @mattheu
 * Samantha Miller, @sambulance
@@ -38,7 +40,7 @@ Sub-components are indicated with an underscore, variants with a hyphen. For exa
 
 * `SomeComponent`
 * `SomeComponent_SubComponent`
-* `SomeComponent-CompenentVarient`
+* `SomeComponent-ComponentVariant`
 
 In the styles/components directory, components should be placed in a file named for the component, `_SomeComponent.scss`.
 

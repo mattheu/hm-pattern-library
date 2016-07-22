@@ -19,7 +19,6 @@
 	&:nth-child( 3n ) { background-color: $hm-primary; }
 
 	.HMLogo {
-		margin: .5em;
 		vertical-align: top;
 	}
 }
@@ -35,10 +34,16 @@
 		@extend .HMLogo-Small;
 		@extend .HMLogo-Red;
 
+		margin: 0 0 $base-line-height;
+
+		@media #{ $mq-md-up } {
 		position: absolute;
 		left: -130px;
 		transform: scale( 1.75 );
 		top: 34px;
+			margin: 0;
+		}
+
 	}
 }
 
@@ -46,6 +51,34 @@
 	@include text-md;
 	margin-top: -1.94375rem;
 	font-style: italic;
+}
+
+.NavAccordions {
+
+	@extend .util-Clearfix;
+	clear: both;
+
+	.NavAccordion {
+		padding: $base-line-height / 2 $gutter-width / 2;
+		width: 100%;
+
+		@media #{ $mq-sm-up } {
+			width: 33.333%;
+			float: left;
+		}
+	}
+}
+
+.StyleGuide_LoadingIndicators {
+
+	.StyleGuide_LoadingIndicator_Container {
+		display: inline-block;
+		padding: #{ $base-line-height / 2 } $gutter-width;
+	}
+
+	.Btn {
+		margin: 0;
+	}
 }
 
 .grid-row {

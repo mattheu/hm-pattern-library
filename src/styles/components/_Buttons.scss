@@ -2,11 +2,11 @@
 	@include font-heading;
 	@include text-std;
 	border: none;
-	padding: #{ $base-line-height / 2 } 30px;
+	padding: #{ $base-line-height / 2 } $gutter-width;
 	background: $hm-primary;
 	color: #FFF;
 	margin-bottom: $base-line-height / 2;
-	margin-right: $base-line-height / 2;
+	margin-right: $gutter-width / 2;
 	display: inline-block;
 	text-align: center;
 	cursor: pointer;
@@ -25,10 +25,18 @@
 		color: #FFF;
 		background: lighten( $hm-primary, 10% );
 		text-decoration: none;
+		outline: none;
 	}
 
 	@media #{ $mq_sm-up } {
 		width: auto;
+	}
+
+	&[disabled] {
+		background: lighten( $hm-primary, 25% );
+		color: lighten( $hm-primary, 35% );
+		cursor: default;
+		opacity: 0.75;
 	}
 
 }
@@ -40,15 +48,28 @@
 	&:focus {
 		background: lighten( $hm-accent, 10% );
 	}
+
+
+	&[disabled] {
+		background: lighten( $hm-accent, 15% );
+		color: lighten( $hm-accent, 25% );
+	}
+
 }
 
 .Btn-Tertiary {
-	background-color: $hm-warm-grey;
+	background-color: $hm-medium-grey;
 
 	&:hover,
 	&:focus {
 		background: lighten( $hm-warm-grey, 10% );
 	}
+
+	&[disabled] {
+		background: lighten( $hm-warm-grey, 50% );
+		color: lighten( $hm-warm-grey, 60% );
+	}
+
 }
 
 .Btn-Transparent {
@@ -66,6 +87,12 @@
 		color: #FFF;
 		background: $hm-primary;
 	}
+
+	&[disabled] {
+		background: transparent;
+		color: lighten( $hm-primary, 35% );
+	}
+
 }
 
 .Btn-Link {
@@ -80,6 +107,10 @@
 	color: $hm-primary;
 	font-weight: normal;
 	letter-spacing: 0;
+
+	&.Btn-Small {
+		padding: 0;
+	}
 
 	&:link,
 	&:visited {
@@ -98,5 +129,13 @@
 
 .Btn-Small {
 	@include text-sm;
-	padding: #{ $base-line-height / 4 } 20px;
+	padding: #{ $base-line-height / 4 } #{ $gutter-width / 2 };
+}
+
+.Btn {
+	.Loading-Active {
+		@extend .Loading-White;
+		margin-right: $gutter-width * .666666667;
+		margin-left: $gutter-width * -.166666667;
+	}
 }

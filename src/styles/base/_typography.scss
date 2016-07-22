@@ -8,6 +8,8 @@
 @mixin font-body {
 	font-family: $font-family-serif;
 	font-weight: 500;
+	text-transform: none;
+	letter-spacing: 0;
 }
 
 @mixin text-xxl {
@@ -100,22 +102,23 @@ p,
 ul,
 ol,
 .text-std {
-	@include text-std;
 	margin: #{ $base-line-height * .75 } 0;
 }
 
 ul,
 ol {
-	list-style-position: inside;
+	list-style-position: outside;
 	padding: 0;
+	padding: 0 0 0 $gutter-width;
 }
 
 blockquote {
 	@include text-md;
 	margin: #{ $base-line-height * .75 } 0;
-	margin-left: 20px;
-	padding-left: 20px;
+	margin-left: $gutter-width;
+	padding-left: $gutter-width;
 	border-left: 1px solid $border-color;
+	font-style: italic;
 }
 
 hr {
@@ -129,6 +132,11 @@ a:link {
 	text-decoration: none;
 }
 
+a:visited {
+	color: darken( $hm-primary, 10% );
+	text-decoration: none;
+}
+
 a:hover,
 a:focus {
 	text-decoration: underline;
@@ -137,22 +145,25 @@ a:focus {
 code,
 pre {
 	color: $hm-warm-grey;
-	background: $hm-light-beige;
+	background: $hm-beige;
 	padding: 0px 5px;
 	display: inline-block;
 	border-radius: 2px;
 }
 
 pre {
-	padding: #{ $base-line-height * .5 } 15px;
+	padding: #{ $base-line-height * .5 } #{ $gutter-width / 2 };
 	display: block;
 	margin: #{ $base-line-height * .75 } 0;
+	max-width: 100%;
+	overflow: auto;
+	white-space: pre-wrap;
 }
 
 // Override the background from prism.js.
 :not( pre ) > code[ class*="language-" ],
 pre[ class*="language-" ] {
-	background: $hm-light-beige;
+	background: $hm-beige;
 	border-radius: 2px;
 }
 
