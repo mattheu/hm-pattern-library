@@ -1,10 +1,25 @@
 <h2 id="style-guide-components-code" class="style-guide-title">Code blocks</h2>
 
-<pre><code class="language-php">&lt;?php
+<p><code>Inline code</code></p></p>
+<p><code class="language-html">&lt;span&gt;Inline code with syntax highlighting&lt;/span&gt;</code></p>
 
+<pre><code class="language-php">&lt;?php
 	if ( 'pens' === pencils ) {
 		return false;
 	}</code></pre>
 
 
-<p>This is some inline code demonstrating how to open a php file <code class="language-php">&lt;?php</code></p>
+<div class="StyleGuide_Documentation">
+
+	<h4>Usage Instructions</h4>
+	<p>Mark up code with <code>&lt;code&gt;</code> tags for inline code snippets, or <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> for longer blocks of code.</p>
+	<p>For code syntax highlighting we are using <a href="http://prismjs.com/">Prism.js</a>. Mark up your code block with the class <code>language-$lang</code>. Prisum supports <code>php, js, html, css, scss</code> and many others. Refer to the <a href="http://prismjs.com/#languages-list">Prism.JS documentation for a full list of available languages</a>.
+
+	<h4>Examples</h4>
+	<pre><code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;!-- HTML CODE HERE --&gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+	<pre><code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;!-- JS CODE HERE --&gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+	<pre><code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;!-- PHP CODE HERE --&gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+
+</div>
+
+

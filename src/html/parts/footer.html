@@ -27,6 +27,27 @@
 
 			} );
 
+			Array.prototype.forEach.call( document.getElementsByClassName( 'style-guide-title' ), function( heading ) {
+
+				var id = heading.getAttribute( 'id' );
+
+				if ( ! id || id.length < 1 ) {
+					return;
+				}
+
+				var link = document.createElement( 'A' );
+				link.classList.add( 'style-guide-title-anchor' );
+				link.setAttribute( 'href', '#' + id );
+
+				var text = document.createTextNode( 'Link to heading' );
+				link.innerText = text.textContent;
+
+				console.log( link );
+
+				heading.insertBefore( link, heading.firstChild );
+
+			} );
+
 		} )();
 
 	</script>

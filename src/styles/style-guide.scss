@@ -4,7 +4,6 @@
  */
 
 @import "style";
-@import "components/Swatch";
 
 .container {
 
@@ -44,7 +43,7 @@
 
 .pattern-library-title {
 
-	@extend .text-xxl;
+	@include text-xxl;
 	position: relative;
 
 	&:before {
@@ -98,5 +97,77 @@
 
 	.Btn {
 		margin: 0;
+	}
+}
+
+.StyleGuide_Documentation {
+	margin: $base-line-height auto;
+	padding: 0 $gutter-width #{ $base-line-height / 2 };
+	border: 1px solid $border-color;
+	border-radius: 2px;
+}
+
+
+// Pattern Library Swatches
+.Swatch {
+
+	float: left;
+	width: 50%;
+	display: block;
+
+	@media ( min-width: 600px ) {
+
+		width: 25%;
+
+		&:nth-child( #{"4n + 1"} ) {
+			clear: left;
+		}
+	}
+}
+
+.Swatch_Background {
+
+	height: $base-line-height * 2;
+	line-height: $base-line-height * 2;
+	display: block;
+	text-align: center;
+
+	@media ( min-width: 600px ) {
+		display: block;
+		width: auto;
+		height: $base-line-height * 4;
+		line-height: $base-line-height * 4;
+	}
+
+	code {
+		background: rgba(255,255,255,0.4);
+	}
+}
+
+.Swatch_Description {
+	@include text-sm;
+	display: block;
+	text-align: center;
+	margin:  #{ $base-line-height * .375 } 0;
+}
+
+.style-guide-title {
+
+	margin-left: calc( -1.5rem - #{ $gutter-width / 2 } );
+
+	.style-guide-title-anchor {
+		display: inline-block;
+		visibility: hidden;
+		width: 1.5rem;
+		height: 1.5rem;
+		background: $hm-light-grey;
+		overflow: hidden;
+		text-indent: 100%;
+		margin-right: $gutter-width / 2;
+		border-radius: 100%;
+	}
+
+	&:hover .style-guide-title-anchor {
+		visibility: visible;
 	}
 }
