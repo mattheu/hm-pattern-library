@@ -144,6 +144,8 @@ a:focus {
 
 code,
 pre {
+	@include text-sm;
+	font-family: $font-family-code;
 	color: $hm-warm-grey;
 	background: $hm-beige;
 	padding: 0px 5px;
@@ -152,6 +154,7 @@ pre {
 }
 
 pre {
+	@include text-sm;
 	padding: #{ $base-line-height * .5 } #{ $gutter-width / 2 };
 	display: block;
 	margin: #{ $base-line-height * .75 } 0;
@@ -161,10 +164,11 @@ pre {
 }
 
 // Override the background from prism.js.
-:not( pre ) > code[ class*="language-" ],
+code[class*="language-"],
 pre[ class*="language-" ] {
 	background: $hm-beige;
 	border-radius: 2px;
+	line-height: inherit;
 }
 
 ::selection {
