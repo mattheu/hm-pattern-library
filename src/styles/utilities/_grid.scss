@@ -10,7 +10,6 @@
 	width: $column_span / $total_columns * 100%;
 	padding-left: $gutter-width / 2;
 	padding-right: $gutter-width / 2;
-	margin-bottom: $base-line-height;
 	float: left;
 }
 
@@ -20,6 +19,12 @@
 
 @for $i from 1 through 12 {
 	.util-GridItem-#{$i} {
-		@include grid-item( $i );
+
+		@include grid-item( 1, 1 );
+
+		@media #{ $mq-sm-up } {
+			@include grid-item( $i );
+		}
+
 	}
 }

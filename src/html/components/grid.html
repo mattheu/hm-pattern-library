@@ -1,5 +1,7 @@
 <h2>Grid</h2>
 
+<p>Juniper includes a a very basic 12 column grid system. There are a few utility classes and helper mixins available for you to use.</p>
+
 <div class="grid-row">
 	<div class="grid-item"><span></span></div>
 	<div class="grid-item"><span></span></div>
@@ -7,13 +9,15 @@
 	<div class="grid-item"><span></span></div>
 </div>
 
-<p>Juniper includes a a very basic grid and a couple of helper mixins. It is a fluid grid, and each item is floated and uses padding for gutters. The size of the gutter is controlled using the <code>$gutter-width</code> variable</p>
-
 <h4>Utility Classes</h4>
-
-<p><code>.util-GridItem-$i</code> Where $i is the number of columns the grid item should  span.</p>
-<p><code>.util-GridItem-Row</code> Grid container class. Offsets margins and clears floats.</p>
+<p><code>.util-GridItem-Row</code> Grid container element class. Required. Offsets margins and clears floats.</p>
+<p><code>.util-GridItem-$i</code> Where <code>$i</code> is the number of columns the grid item should span.</p>
 
 <h4>Mixins</h4>
-<p><code>grid-item( $columns, $total_columns );</code> which will create a floated grid item with a fluid width, and internal padding using the value of $gutter-width.defaults to total 12 columns).</p>
-<p><code>grid-row();</code> Offsets margins and clears floats.</p>
+<p><code>grid-row();</code> Grid item container element. Required. Offsets margins and clears floats.</p>
+<p><code>grid-item( $columns );</code> Create a fluid grid item that spans the number of columns passed in a 12 column grid. (Optional, pass total columns as 2nd parameter).</p>
+
+<h4>Further Information</h4>
+<p><b>Responsive grids</b> The utility classes simply drop to a single column on smaller screens. If using the mixins, you can fine tune your own layout yourself. See the style guide css as a reference.</p>
+<p><b>Nested grids</b> You can easily do nested grids using the SASS mixin. Simply pass the current column width (in columns) as the second param. For example, if you have a grid item that spans 6 columns, and you wish to have a child element that spans 1 column of the original 12 column grid, you can use <code>grid-item( 1, 6 ); </code></p>
+<p><b>Gutter width</b> The size of the gutter is controlled using the <code>$gutter-width</code> variable.</p>

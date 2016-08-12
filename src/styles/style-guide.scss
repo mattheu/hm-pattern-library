@@ -1,6 +1,25 @@
+/**
+ * This is only used for the documentation pages,
+ * and you do not need to include this file in your project.
+ */
+
 @import "style";
 @import "components/Swatch";
 
+.container {
+
+	max-width: 40rem;
+	margin: auto;
+
+	@media #{ $mq-md-down } {
+		max-width: calc( 100% - #{ $gutter-width * 4 } );
+	}
+
+	@media #{ $mq-sm-down } {
+		max-width: calc( 100% - #{ $gutter-width * 2 } );
+	}
+
+}
 
 /**
  * For previewing a list/grid of logos.
@@ -15,7 +34,7 @@
 
 	width: auto;
 	&:nth-child( n ) { background-color: white; }
-	&:nth-child( 2n ) { background-color: $hm-light-beige; }
+	&:nth-child( 2n ) { background-color: $hm-beige; }
 	&:nth-child( 3n ) { background-color: $hm-primary; }
 
 	.HMLogo {
@@ -25,6 +44,7 @@
 
 .pattern-library-title {
 
+	@extend .text-xxl;
 	position: relative;
 
 	&:before {
@@ -37,10 +57,10 @@
 		margin: 0 0 $base-line-height;
 
 		@media #{ $mq-md-up } {
-		position: absolute;
-		left: -130px;
-		transform: scale( 1.75 );
-		top: 34px;
+			position: absolute;
+			left: -130px;
+			transform: scale( 1.75 );
+			top: 34px;
 			margin: 0;
 		}
 
@@ -88,6 +108,7 @@
 .grid-item {
 
 	@include grid-item( 3, 12 );
+	margin-bottom: $base-line-height;
 
 	@media #{ $mq-md-down } {
 		@include grid-item( 1, 2 );
