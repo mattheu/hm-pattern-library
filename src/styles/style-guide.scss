@@ -102,9 +102,13 @@
 
 .StyleGuide_Documentation {
 	margin: $base-line-height auto;
-	padding: 0 $gutter-width #{ $base-line-height / 2 };
+	padding: #{ $base-line-height / 2 } $gutter-width;
 	border: 1px solid $border-color;
 	border-radius: 2px;
+}
+
+.StyleGuide_Documentation_Header {
+	margin: #{ $base-line-height / 2 } auto;
 }
 
 
@@ -170,8 +174,7 @@
 		margin-right: $gutter-width / 2;
 	}
 
-	&:hover .style-guide-title-anchor,
-	&:target .style-guide-title-anchor {
+	&:hover .style-guide-title-anchor {
 		visibility: visible;
 	}
 }
