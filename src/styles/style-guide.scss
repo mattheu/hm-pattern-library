@@ -140,7 +140,7 @@
 	}
 
 	code {
-		background: rgba(255,255,255,0.4);
+		background: rgba( 255, 255, 255, 0.4 );
 	}
 }
 
@@ -151,23 +151,27 @@
 	margin:  #{ $base-line-height * .375 } 0;
 }
 
-.style-guide-title {
+.style-guide-title-has-anchor {
 
 	margin-left: calc( -1.5rem - #{ $gutter-width / 2 } );
+	padding-left: calc( 1.5rem + #{ $gutter-width / 2 } );
 
 	.style-guide-title-anchor {
 		display: inline-block;
+		position: relative;
 		visibility: hidden;
 		width: 1.5rem;
 		height: 1.5rem;
-		background: $hm-light-grey;
+		background: url( "#{ $hm-images }/icons/icon-link-red.svg" ) center center no-repeat;
+		background-size: 100%;
 		overflow: hidden;
 		text-indent: 100%;
+		margin-left: calc( -1.5rem - #{ $gutter-width / 2 } );
 		margin-right: $gutter-width / 2;
-		border-radius: 100%;
 	}
 
-	&:hover .style-guide-title-anchor {
+	&:hover .style-guide-title-anchor,
+	&:target .style-guide-title-anchor {
 		visibility: visible;
 	}
 }

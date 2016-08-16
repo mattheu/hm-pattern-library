@@ -32,7 +32,10 @@
 				var id = heading.getAttribute( 'id' );
 
 				if ( ! id || id.length < 1 ) {
-					return;
+					id = heading.textContent;
+					id = 'heading-anchor-' + id.replace( /\s/g, '-' ).toLowerCase(); // Format ID nicely.
+					id = id.replace( /[^A-Za-z0-9_-]/g, '' ); // Stip invalid.
+					heading.setAttribute( 'id', id );
 				}
 
 				var link = document.createElement( 'A' );
@@ -41,10 +44,8 @@
 
 				var text = document.createTextNode( 'Link to heading' );
 				link.innerText = text.textContent;
-
-				console.log( link );
-
 				heading.insertBefore( link, heading.firstChild );
+				heading.classList.add( 'style-guide-title-has-anchor' );
 
 			} );
 
