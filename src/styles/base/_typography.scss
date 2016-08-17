@@ -128,17 +128,19 @@ hr {
 }
 
 a:link {
-	color: $color-primary;
+	color: $color-text-link;
 	text-decoration: none;
 }
 
 a:visited {
-	color: darken( $color-primary, 10% );
+	color: darken( $color-text-link, 10% );
 	text-decoration: none;
 }
 
 a:hover,
+a:active,
 a:focus {
+	color: $color-text-link-focus;
 	text-decoration: underline;
 }
 

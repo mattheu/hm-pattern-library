@@ -66,8 +66,8 @@
 	}
 
 	&[disabled] {
-		background: lighten( $color-btn-tertiary-disbaled, 50% );
-		color: lighten( $color-btn-tertiary-disbaled, 60% );
+		background: lighten( $color-btn-tertiary-disabled, 50% );
+		color: lighten( $color-btn-tertiary-disabled, 60% );
 	}
 
 }
